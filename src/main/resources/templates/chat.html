@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width">
+        <title>Chat Room</title>
+        <!-- CSS for MDUI Needs to be replaced with MDC material.io-->
+        <link rel="stylesheet" th:href="@{/webjars/mdui/dist/css/mdui.css}">
+        <!-- Materialize CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- SockJS Client -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.min.js"></script>
+        <!-- STOMP JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+        <!-- jQuery and MDUI -->
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/mdui/dist/js/mdui.js}"></script>
+        <!-- Materialize JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </head>
+
+    <body class="mdui-theme-primary-indigo mdui-theme-accent-pink">
+
+        <div style="margin-left:20px;margin-right:20px">
+            <div class="mdui-toolbar mdui-color-theme">
+                <span class="mdui-typo-title">Chat Room</span>
+                <div class="mdui-toolbar-spacer"></div>
+                <a class="mdui-btn mdui-btn-icon" th:href="@{/logout}">
+                    <i class="mdui-icon material-icons">exit_to_app</i>
+                </a>
+            </div>
+        </div>
+
+        <div style="margin-left:20px;margin-right:20px">
+            <div class="container_text">
+                <div class="mdui-row">
+                    <div class="mdui-col-xs-12 mdui-col-sm-6">
+
+                        <!-- Welcome: field -->
+                        <div class="mdui-col-xs-12 mdui-col-sm-10">
+                            <div class="mdui-textfield-floating-label" style="margin-top:15px">
+                                <i class="mdui-icon">Welcome：</i>
+                                <i class="mdui-icon" id="username" th:text="${username}"></i>
+                            </div>
+                        </div>
+
+                        <!-- Send Text icon and text field -->
+
+                        <form id="messageForm" name="messageForm">
+                            <div class="mdui-col-xs-12 mdui-col-sm-10">
+                                <div class="mdui-textfield mdui-textfield-floating-label">
+                                    <i class="mdui-icon material-icons">textsms</i>
+                                    <label class="mdui-textfield-label mdc-typography">Send Text</label>
+                                    <input class="mdui-textfield-input" type="text" id="message" autocomplete="off"/>
+                                </div>
+
+                                <!-- Clear button -->
+                                <div class="mdui-container" style="padding:20px 35px">
+                                    <button class="mdui-btn mdui-color-grey mdui-ripple"
+                                            onclick="clearMsg()">Clear
+                                    </button>
+
+                                    <!-- TODO: add a send button to send message -->
+                                    <!-- Send button -->
+                                    <button class="mdui-btn mdui-color-theme mdui-ripple mdui-float-right" type="submit">Send
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="mdui-col-xs-6 mdui-col-sm-5" style="padding:10px 0">
+                        <div class="mdui-chip">
+                            <span class="mdui-chip-icon mdui-color-blue">
+                                <i class="mdui-icon material-icons">&#xe420;</i></span>
+                            <span class="mdui-chip-title">Content</span>
+                        </div>
+
+                        <div class="mdui-chip">
+                            <span class="mdui-chip-icon mdui-color-blue">
+                                <i class="mdui-icon material-icons">face</i>
+                            </span>
+                            <!-- TODO: check online number num -->
+                            <span class="mdui-chip-title" onClick="getUserCount()">Online Users</span>
+
+                        </div>
+                        <!-- TODO: add a message container -->
+                        <ul id="messageArea" style="width: 300px; height: 200px; overflow: auto; overflow-wrap: normal"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script th:src="@{/js/chat.js}"></script>
+    </body>
+</html>

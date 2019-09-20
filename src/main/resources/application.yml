@@ -1,0 +1,9 @@
+spring:
+  thymeleaf:
+    cache: false
+
+    profiles:
+      include: default
+
+server: 127.0.0.1
+port: 8080

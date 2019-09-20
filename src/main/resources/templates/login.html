@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>Chat Room Login</title>
+    <link type="text/css" th:href="@{/css/login.css}" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="logo_box">
+        <h3>Chat Room</h3>
+        <form id="loginForm" name="loginForm" method="POST">
+            <div class="input_outer">
+                <span class="u_user"></span>
+                <input id="username" name="username" class="text" type="text" placeholder="Enter a Username">
+            </div>
+
+            <div class="mb2">
+                <a class="act-but submit" type="submit">Login</a>
+            </div>
+        </form>
+        <div>some other string</div>
+    </div>
+</body>
+</html>

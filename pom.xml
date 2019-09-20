@@ -104,7 +104,7 @@
     </dependencies>
 
     <build>
-        <testSourceDirectory>${basedir}/src/test/main/java/com/grtanner/spring/chatroom/controller</testSourceDirectory>
+        <testSourceDirectory>src/test/java/com/grtanner/spring/chatroom/controller</testSourceDirectory>
 
         <plugins>
             <plugin>

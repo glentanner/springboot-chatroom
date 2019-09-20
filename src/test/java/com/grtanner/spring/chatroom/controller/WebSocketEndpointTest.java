@@ -1,5 +1,3 @@
-package com.grtanner.spring.chatroom.controller;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.grtanner.spring.chatroom.model.Message;
 import org.junit.Assert;

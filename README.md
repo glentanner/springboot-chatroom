@@ -11,4 +11,8 @@ The Message model is the message payload that is exchanged between the client an
 2. CHAT
 3. LEAVE
 
+![chatLogin](https://user-images.githubusercontent.com/39966073/76257115-ae391300-6216-11ea-985d-329b40198847.jpg)
 
+
+
+![chatroom](https://user-images.githubusercontent.com/39966073/76257153-c315a680-6216-11ea-9ea5-537805be2b5b.png)
